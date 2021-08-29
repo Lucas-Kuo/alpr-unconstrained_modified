@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
 			bname = basename(splitext(img_path)[0])
 
-			R,(width,height) = detect(ocr_net, ocr_meta, img_path ,thresh=ocr_threshold, nms=None)
+			R,(width,height) = detect(ocr_net, ocr_meta, bytes(img_path, encoding='utf-8') ,thresh=ocr_threshold, nms=None)
 
 			if len(R):
 
