@@ -47,11 +47,11 @@ if __name__ == '__main__':
 
             bname = basename(splitext(img_path)[0])
 			
-			starttime = time()
+            starttime = time()
 
             R,_ = detect(vehicle_net, vehicle_meta, bytes(img_path, encoding='utf-8'), thresh=vehicle_threshold)
 			
-			total_time = time() - starttime
+            total_time = time() - starttime
 
             R = [r for r in R if r[0] in [b'car',b'bus']]
 
