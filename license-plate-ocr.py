@@ -2,7 +2,7 @@ import sys
 import cv2
 import numpy as np
 import traceback
-import time
+from time import time
 
 import darknet.python.darknet as dn
 
@@ -39,11 +39,11 @@ if __name__ == '__main__':
 
 			bname = basename(splitext(img_path)[0])
 			
-			start = time()
+            start = time()
 
 			R,(width,height) = detect(ocr_net, ocr_meta, bytes(img_path, encoding='utf-8') ,thresh=ocr_threshold, nms=None)
 			
-			total_time = time() - start
+            total_time = time() - start
 
 			if len(R):
 
