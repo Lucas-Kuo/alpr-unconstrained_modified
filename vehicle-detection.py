@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import traceback
 import os
-import time
+from time import time
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
