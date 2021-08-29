@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import traceback
 import os
+import time
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -45,16 +46,16 @@ if __name__ == '__main__':
             print ('\tScanning %s' % img_path)
 
             bname = basename(splitext(img_path)[0])
+			
+			starttime = time()
 
             R,_ = detect(vehicle_net, vehicle_meta, bytes(img_path, encoding='utf-8'), thresh=vehicle_threshold)
-            '''img = cv2.imread(os.path.join("/content", "alpr-unconstrained", img_path))
-            plt.imshow(img)
-            plt.show()'''
-
+			
+			total_time = time() - starttime
 
             R = [r for r in R if r[0] in [b'car',b'bus']]
 
-            print ('\t\t%d cars found' % len(R))
+            print ('\t\t%d cars found in %0.4f seconds' % (len(R), total_time))
 
             if len(R):
 
