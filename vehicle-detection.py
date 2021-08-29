@@ -26,8 +26,8 @@ if __name__ == '__main__':
 
         vehicle_threshold = .2
 
-        vehicle_weights = 'data/vehicle-detector/yolov3.weights'
-        vehicle_netcfg  = 'data/vehicle-detector/yolov3.cfg'
+        vehicle_weights = 'data/vehicle-detector/yolo-voc.weights'
+        vehicle_netcfg  = 'data/vehicle-detector/yolo-voc.cfg'
         vehicle_dataset = 'data/vehicle-detector/voc.data'
         
         vehicle_net  = dn.load_net(bytes(vehicle_netcfg, encoding='utf-8'), bytes(vehicle_weights, encoding='utf-8'), 0)
