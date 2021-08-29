@@ -2,6 +2,7 @@ import sys
 import cv2
 import numpy as np
 import traceback
+import time
 
 import darknet.python.darknet as dn
 
@@ -37,8 +38,12 @@ if __name__ == '__main__':
 			print ('\tScanning %s' % img_path)
 
 			bname = basename(splitext(img_path)[0])
+			
+			start = time()
 
 			R,(width,height) = detect(ocr_net, ocr_meta, bytes(img_path, encoding='utf-8') ,thresh=ocr_threshold, nms=None)
+			
+			total_time = time() - start
 
 			if len(R):
 
@@ -51,7 +56,7 @@ if __name__ == '__main__':
 				with open('%s/%s_str.txt' % (output_dir,bname),'w') as f:
 					f.write(lp_str + '\n')
 
-				print ('\t\tLP: %s' % lp_str)
+				print ('\t\tLP: %s\nfound in %0.4f seconds' % (lp_str, total_time))
 
 			else:
 
