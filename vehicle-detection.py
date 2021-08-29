@@ -52,7 +52,7 @@ if __name__ == '__main__':
             plt.show()'''
 
 
-            R = [r for r in R if r[0] in ['car','bus']]
+            R = [r for r in R if r[0] in [b'car',b'bus']]
 
             print ('\t\t%d cars found' % len(R))
 
