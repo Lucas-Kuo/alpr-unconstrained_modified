@@ -13,7 +13,7 @@ DEBUG=0
 # This is what I use, uncomment if you know your arch and want to specify
 # ARCH= -gencode arch=compute_52,code=compute_52
 
-ARCH = -gencode arch=compute_37, code=compute_37 # For Kepler 2.0 architecture / Tesla K80
+ARCH= -gencode arch=compute_37,code=compute_37 # For Kepler 2.0 architecture / Tesla K80
 
 VPATH=./src/:./examples
 SLIB=libdarknet.so
